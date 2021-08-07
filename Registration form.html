@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abi's Task</title>
+    <link rel="stylesheet" href="Registration form.css">
+    <script src="Registration form.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <ul class="progressbar">
+            <li id="step1" class="active">Personal Details</li>
+            <li id="step2">Company Details</li>
+            <li id="step3">Email Verification</li>
+        </ul>
+    </div>
+    <!-- form 1 -->
+
+    <div id="form1" class="activate-form">
+        <div class="align">
+            <div class="font">
+                Add your personal details
+            </div>
+            <p>
+                Lorem Ipsum is simply dummy text of the printingvand typesetting industry.
+            </p>
+        </div>
+        <form class="forms" name="formOne">
+            <div class="space">
+                <label>Full Name</label> <br>
+                <input type="text" name="fullName" class="input-field">
+            </div>
+
+
+            <div class="space">
+                <label>Gender</label>
+                <div>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male" class="cursor-pointer">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female" class="cursor-pointer">Female</label>
+                    <input type="radio" id="others" name="gender" value="Others">
+                    <label for="others" class="cursor-pointer">Others</label>
+                </div>
+
+            </div>
+
+
+            <div class="space">
+                <label>Country</label> <br>
+                <select class="input-field cursor-pointer" name="country">
+                    <option value="India">India</option>
+                    <option value="Australia">Australia</option>
+                    <option value="America">America</option>
+                </select>
+            </div>
+
+            <div class="space">
+                <label>State</label> <br>
+                <select class="input-field cursor-pointer" name="state">
+                    <option value="India">Tamilnadu</option>
+                    <option value="Australia">Kerala</option>
+                    <option value="America">Karnataka</option>
+                </select>
+            </div>
+
+            <div class="space">
+                <label>Phone number</label> <br>
+                <div class="d-flex">
+                    <input type="text" value="+91" maxlength="3" class="input-field"
+                        style="width: 5%;border-right: none;">
+                    <input type="number" class="input-field " name="mobile" style="width: 95%;border-left: none;">
+                </div>
+            </div>
+
+            <div id="error-msg" class="font-16 deactivate-form">* All fields are mandatory</div>
+
+            <div class="btn-next space">
+                <input type="button" value="Next" class="button cursor-pointer orange-color font-color"
+                    onclick="pageOne()">
+            </div>
+        </form>
+
+        <div>
+            <div class="already-account"> Already have an account?<a class="font-12"> Log in</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Form 2 -->
+    <div id="form2" class="deactivate-form">
+        <div class="align">
+            <div class="font">
+                Add your company details
+            </div>
+            <p>
+                Lorem Ipsum is simply dummy text of the printingvand typesetting industry.
+            </p>
+        </div>
+        <form class="forms" name="formTwo">
+            <div class="d-flex align-center">
+                <div class="border">
+                    <input type="file" name="uploadfile" id="img" style="display:none;" />
+                    <label for="img" class="custom-file-upload">Select file</label>
+
+                </div>
+                <label>Upload your company logo</label>
+            </div>
+
+            <div class="space">
+                <label>Company Name</label>
+                <input type="text" class="input-field" name="companyName">
+
+            </div>
+
+            <div class="space">
+                <label>Email Id</label>
+                <input type="email" class="input-field" name="emailId">
+            </div>
+
+            <div class="space">
+                <label>Job Title</label>
+                <input type="text" class="input-field" name="jobTitle">
+            </div>
+
+            <div class="space">
+                <label>Work Experience</label>
+                <input type="number" class="input-field" name="workExp">
+
+            </div>
+
+            <div class="space">
+                <input type="checkbox" value="checkbox">
+                <label for="checkbox">I accept the <a class="font-12">Terms and conditions</a></label>
+            </div>
+
+            <br>
+
+            <div id="error-msg-2" class="font-16 deactivate-form">* All fields are mandatory</div>
+            <input type="button" value="Back" class="back" onclick="pageOneBack()">
+            <input type="button" value="Send  OTP" class="button-field  orange-color font-color" onclick="pageTwo()">
+        </form>
+    </div>
+
+    <!-- forms 3 -->
+    <div id="form3" class="deactivate-form">
+        <div class="align">
+            <div class="font">
+                Enter your OTP
+            </div>
+            <p> For your security, we need to verify your identity.We sent a 5 digit<br> code to
+                name@domain.com.Please enter it below.</p>
+
+        </div>
+        <form class="forms" name="formThree">
+
+            <div method="get" class="digit-group otp-box" data-group-name="digits" data-autosubmit="false"
+                autocomplete="off">
+                <input type="text" class="digit" maxlength="1" / name="otp1">
+                <input type="text" class="digit" maxlength="1" / name="otp2">
+                <input type="text" class="digit" maxlength="1" / name="otp3">
+                <input type="text" class="digit" maxlength="1" / name="otp4">
+                <input type="text" class="digit" maxlength="1" / name="otp5">
+                <input type="text" class="digit" maxlength="1" / name="otp6">
+            </div>
+
+            <br>
+
+            <div>
+                <div id="error-msg-3" class="font-16 deactivate-form">* All fields are mandatory</div>
+
+                <input type="button" value="Back" class="back" onclick="pageTwoBack()">
+                <button class="button-field orange-color font-color" onclick="verify()">Verify</button>
+
+            </div>
+        </form>
+        <div class="space">
+            <div class="already-account">Didn't receive the email? Check your spam filter for an email<br>
+                from<a class="font-12"> name@domain.com</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
